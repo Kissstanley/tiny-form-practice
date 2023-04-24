@@ -1,0 +1,14 @@
+.header {
+    color: darkgray;
+    display: flex;
+    justify-content: center;
+}
+
+.easter{
+    font-weight: 600;
+}
+
+p{
+    font-size: 20px;
+}
+
