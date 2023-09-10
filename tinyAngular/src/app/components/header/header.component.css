@@ -1,0 +1,17 @@
+.header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background-color: midnightblue;
+  font-size: 25px;
+}
+
+a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.active{
+  color: mediumvioletred;
+}
