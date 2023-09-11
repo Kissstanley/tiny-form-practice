@@ -1,0 +1,17 @@
+.Header{
+    margin: 0;
+    display: flex;
+    font-size: 25px;
+    background-color: blueviolet;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.links a{
+    text-decoration: none;
+    color: midnightblue;
+}
