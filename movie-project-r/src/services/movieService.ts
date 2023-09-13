@@ -1,11 +1,10 @@
-import {IMovie} from "../interfaces";
-import {apiService, IRes} from "./apiService";
-import {api_key, urls} from "../const";
+import {apiService} from "./apiService";
+import { urls} from "../const";
+import {IMovieRes} from "../interfaces";
 
 const movieService={
-    getAll():IRes<IMovie[]> {
-     return apiService.get(urls.movies+api_key)
-    }
+    getAll:()=>apiService.get<IMovieRes>(urls.movies.base),
+    getById:(id:number)=>apiService.get<IMovieRes>(urls.movies.byId(id))
 }
 export {
     movieService

@@ -1,8 +1,11 @@
 .Header{
+    height: 5vh;
     margin: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 25px;
-    background-color: blueviolet;
+    background-color: maroon;
 }
 
 .links{
@@ -13,5 +16,9 @@
 
 .links a{
     text-decoration: none;
-    color: midnightblue;
+    color: silver;
+}
+
+.active{
+    color: black;
 }

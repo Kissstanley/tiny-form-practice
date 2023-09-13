@@ -1,18 +1,24 @@
 import React, {FC} from 'react';
 import {IMovie} from "../../../interfaces";
+import styles from './MovieListCard.module.css'
+import {urls} from "../../../const";
 
 interface IProps{
     movie:IMovie
 }
 const MoviesListCard:FC<IProps> = ({movie}) => {
-    const {id,backdrop_path,poster_path,original_language}=movie
+    const {backdrop_path,original_title}=movie
     return (
-        <div>
-            <div>id: {id}</div>
-            <div>backdrop_path: {backdrop_path}</div>
-            <div>poster_path: {poster_path}</div>
-            <div>original_language: {original_language}</div>
+
+            <div className={styles.wrapper}>
+                    <div className={styles.place}>
+                        <div className={styles.pict}>
+                            <img src={urls.imageBase+backdrop_path} alt="backdrop_path" />
+                        </div>
+                        <h2 >{original_title}</h2>
+                </div>
         </div>
+
     );
 };
 

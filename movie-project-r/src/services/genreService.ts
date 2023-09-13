@@ -1,11 +1,10 @@
-import {apiService, IRes} from "./apiService";
-import {IGenre} from "../interfaces";
-import {api_key, urls} from "../const";
+import {apiService} from "./apiService";
+import {urls} from "../const";
+import {IGenreRes} from "../interfaces/genreResInterface";
 
 const genreService={
-    getAll():IRes<IGenre[]>{
-        return apiService.get(urls.genres+api_key)
-    }
+    getAll:()=>apiService.get<IGenreRes>(urls.genres)
+
 }
 
 export {

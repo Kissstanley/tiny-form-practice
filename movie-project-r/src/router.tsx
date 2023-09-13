@@ -2,6 +2,7 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "./Layouts";
 import {GenresPage, MoviesPage} from "./Pages";
+import {MoviesPageDetails} from "./Pages";
 
 export const router=createBrowserRouter([
     {
@@ -14,7 +15,13 @@ export const router=createBrowserRouter([
             },
             {
                 path:'movies',
-                element:<MoviesPage/>
+                element:<MoviesPage/>,
+                children:[
+                    {
+                        path:':id',
+                        element:<MoviesPageDetails/>
+                    }
+                ]
             },
             {
                 path:'genres',

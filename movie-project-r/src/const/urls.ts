@@ -1,16 +1,20 @@
 const baseURL = process.env.REACT_APP_API
-const api_key='?api_key=c105d1074a9373f1bad409788da29c00'
 
 const movies='/discover/movie'
 const genres='/genre/movie/list'
+const imageBase='https://image.tmdb.org/t/p/w500'
 
 const urls ={
-    movies,
-    genres
+    movies:{
+        base:movies,
+        byId:(id:number)=>`${movies}/${id}`
+    },
+    genres,
+    imageBase
 }
 
 export {
     baseURL,
-    api_key,
-    urls
+    urls,
+    imageBase
 }
