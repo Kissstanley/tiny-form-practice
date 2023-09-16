@@ -1,10 +1,10 @@
 import {apiService} from "./apiService";
-import { urls} from "../const";
-import {IMovieRes} from "../interfaces";
+import {urls} from "../const";
+import {IMovieInfo, IMovieRes} from "../interfaces";
 
 const movieService={
-    getAll:()=>apiService.get<IMovieRes>(urls.movies.base),
-    getById:(id:number)=>apiService.get<IMovieRes>(urls.movies.byId(id))
+    getAll:(page:string)=>apiService.get<IMovieRes>(urls.movies.base,{params:{page}}),
+    getById:(id:string)=>apiService.get<IMovieInfo>(urls.movies.byId(id))
 }
 export {
     movieService

@@ -3,7 +3,6 @@ import {movieReducer} from "./slices/movieSlice";
 import {genreReducer} from "./slices/genreSlice";
 
 
-
 const store = configureStore({
     reducer: {
         movies:movieReducer,

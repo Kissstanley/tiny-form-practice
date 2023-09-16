@@ -1,5 +1,28 @@
+:root{
+    --body_background: black;
+    --header_background: #3d1809;
+    --body_color: white;
+    --text_color: silver;
+    --genre_color: red;
+    --button_color: red;
+    --but_color: #3d1809;
+    --link_color: silver;
+}
+
+[data-theme="light"]{
+    --body_background: silver;
+    --header_background: white;
+    --body_color: black;
+    --text_color: black;
+    --genre_color: #7c7c0a;
+    --button_color: #7c7c0a;
+    --but_color: #969595;
+    --link_color: cyan;
+}
+
 body{
     margin: 0;
-    background-color: black;
-    color: silver;
+    background-color: var(--body_background);
+    color: var(--text_color);
 }
+

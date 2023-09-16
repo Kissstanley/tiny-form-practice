@@ -14,14 +14,14 @@ export const router=createBrowserRouter([
             element:<Navigate to={'movies'}/>
             },
             {
-                path:'movies',
+                path:'movies/',
                 element:<MoviesPage/>,
-                children:[
-                    {
-                        path:':id',
-                        element:<MoviesPageDetails/>
-                    }
-                ]
+
+            },
+            {
+                path:'movies/:id',
+                element:<MoviesPageDetails/>,
+
             },
             {
                 path:'genres',

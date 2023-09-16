@@ -1,7 +1,8 @@
+
 const MovieListCardDetails = () => {
     return (
         <div>
-            MovieListCardDetails
+
         </div>
     );
 };

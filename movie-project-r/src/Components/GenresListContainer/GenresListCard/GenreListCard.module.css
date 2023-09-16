@@ -6,7 +6,7 @@
 }
 
 .genre-box{
-    height: 19vh;
+    height: 100%;
 }
 
 p{
@@ -16,4 +16,12 @@ p{
     height: 100%;
     align-items: center;
     justify-content: center;
+}
+
+p:hover{
+    transition: 0.7s;
+    scale: 0.9;
+    background-color: var(--header_background);
+    cursor: pointer;
+    border-radius: 40px;
 }

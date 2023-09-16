@@ -16,7 +16,4 @@
 .pict:hover{
     transition: 0.5s;
     scale: 0.9;
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 30px;
 }

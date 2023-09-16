@@ -1,11 +1,17 @@
-.Header{
-    height: 5vh;
-    margin: 0;
+.head{
+    height: 8vh;
+    background-color: var(--header_background);
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+
+
+.header{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    background-color: maroon;
 }
 
 .links{
@@ -16,9 +22,27 @@
 
 .links a{
     text-decoration: none;
+    color: var(--link_color);
+}
+
+.user{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 2vw;
+    height: 4vh;
+    margin-top: -3vh;
+}
+
+h4{
+    margin-right: 10px;
     color: silver;
 }
 
-.active{
+.switcher{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50vw;
     color: black;
 }

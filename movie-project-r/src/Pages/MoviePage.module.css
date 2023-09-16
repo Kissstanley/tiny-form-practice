@@ -1,0 +1,8 @@
+.pag{
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header_background);
+
+}

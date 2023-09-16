@@ -7,10 +7,9 @@ interface IProps{
     genre:IGenre
 }
 const GenreListCard:FC<IProps> = ({genre}) => {
-
     return (
         <div className={styles.genre}>
-            <p><div className={styles.genreBox}>{genre.name}</div></p>
+            <p className={styles.genres}>{genre.name}</p>
         </div>
     );
 };

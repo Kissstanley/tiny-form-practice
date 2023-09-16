@@ -1,22 +1,23 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
 import {AxiosError} from "axios";
-import {IMovie, IMovieRes} from "../../interfaces";
+import {IMovieInfo, IMovieRes} from "../../interfaces";
 
 
 
 const initialState:IMovieRes={
         page:null,
         results:[],
-        total_pages:null,
-        total_results:null
+        total_pages:0,
+        total_results:null,
+        movie: null
 }
 
-const getAll = createAsyncThunk<IMovieRes,void>(
+const getAll = createAsyncThunk<IMovieRes, { page:string }>(
     'movieSlice/getAll',
-    async(_, {rejectWithValue}) =>{
+    async({page}, {rejectWithValue}) =>{
         try {
-            const {data}=await movieService.getAll()
+            const {data}=await movieService.getAll(page)
             return data
         }catch (e){
             const err = e as AxiosError
@@ -25,18 +26,19 @@ const getAll = createAsyncThunk<IMovieRes,void>(
     }
 )
 
-// const getById = createAsyncThunk<IMovie,{id:number}>(
-//     'movieSlice/getById',
-//     async ({id},{rejectWithValue})=>{
-//         try {
-//             const {data}=await movieService.getById(id)
-//             return data
-//         }catch (e){
-//             const err = e as AxiosError
-//             return rejectWithValue(err.response.data)
-//         }
-//     }
-// )
+const getById = createAsyncThunk<IMovieInfo, string>(
+    'movieSlice/getById',
+    async (id,{rejectWithValue})=>{
+        try {
+            const {data}=await movieService.getById(id)
+
+            return data
+        }catch (e){
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
 
 const movieSlice=createSlice({
     name:'movieSlice',
@@ -46,7 +48,10 @@ const movieSlice=createSlice({
     extraReducers:builder => builder
         .addCase(getAll.fulfilled, (state, {payload}) => {
             state.results=payload.results
-            state.page=payload.page
+            state.total_pages=payload.total_pages
+        })
+        .addCase(getById.fulfilled, (state, {payload}) => {
+            state.movie=payload
         })
 })
 
@@ -54,7 +59,8 @@ const {reducer:movieReducer,actions}=movieSlice;
 
 const movieActions ={
     ...actions,
-    getAll
+    getAll,
+    getById
 }
 
 export {
