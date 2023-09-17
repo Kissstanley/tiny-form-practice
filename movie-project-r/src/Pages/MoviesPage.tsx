@@ -1,11 +1,10 @@
 import {MoviesList} from "../Components";
 import {Pagination} from "@mui/material";
 import styles from './MoviePage.module.css'
-import {useAppSelector} from "../hooks";
-import {useSearchParams} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../hooks";
+import {movieActions} from "../redux";
 
 const MoviesPage = () => {
-    const [,setQuery]=useSearchParams()
     const {total_pages}=useAppSelector(state => state.movies)
 
     return (

@@ -21,14 +21,14 @@ const MovieListCardDetailsContainer = () => {
                         <img src={urls.imageBase+poster_path} alt="backdrop_path"/>
                         <div className={styles.info}>
 
-                            <div>Adult: {adult?'18+':'No'}</div>
+                            <div>Adult: {adult?'18+':'4+'}</div>
                             <div>Budget: {budget?`${budget}$`:'without budget'}</div>
                             <div>Original language: {original_language}</div>
                             <div>Release date: {release_date}</div>
                             <div>Runtime: {runtime}m</div>
                             <div>Status: {status}</div>
                             <div className={styles.desc}> Description:{overview}
-                                <h5>Tagline: "{tagline}"</h5>
+                                <h5>Tagline: {tagline?`"${tagline}"`:'without tagline'}</h5>
                             </div>
                             <div className={styles.genre}>
                                 <div>Genres:</div>
