@@ -1,0 +1,53 @@
+.wrapper{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: salmon;
+    border-radius: 20px;
+}
+
+
+.money{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.placement{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.delete{
+    cursor: pointer;
+    margin-top: 1%;
+}
+
+.container{
+    width: 40vw;
+}
+
+.place{
+    width: 30vw;
+}
+
+
+.box{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.adder{
+    margin-top: -5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
